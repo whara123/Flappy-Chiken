@@ -23,44 +23,60 @@ body{
 }
 
 .chiken{
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
+    position: absolute;
     background-image: url(../img/chiken.png);
     background-repeat: no-repeat;
     background-size: contain;
-    transform: translate(100px,250px);
-    transition: .3s;
+    bottom : 250px;
+    left: 100px;
 }
 
-
-.wrap-wall{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-}
-
-.wall{
+.down-wall,.top-wall{
     display: inline-block;
     width: 100px;
-    height: 1500px;
-    background-image: url(../img/wall.png);
+    height: 355px;
+    position: absolute;
+    background-image: url(../img/downside.png);
     background-repeat: no-repeat;
     background-size: contain;
-    transform: translate(600px, -200px);
+    left: 600px;
+    bottom: -100px;
     animation: wallmove 3s infinite linear;
-    
 }
 
-.wall:nth-child(2){
-    transform: translate(600px, -200px);
-    animation: wallmove 3s infinite linear;
-    animation-delay: 0.7s;
+.top-wall{
+    background-image: url(../img/upside.png);
+    left: 600px;
+    top:-200px;
 }
 
-.wall:nth-child(3){
-    transform: translate(600px, -200px);
+.down-wall:nth-child(2){
+    left: 600px;
+    bottom: -100px;
     animation: wallmove 3s infinite linear;
-    animation-delay: 1.4s;
+    animation-delay: 1s;
+}
+
+.top-wall:nth-child(5){
+    left: 600px;
+    top:-200px;
+    animation: wallmove 3s infinite linear;
+    animation-delay: 1s;
+}
+
+.down-wall:nth-child(3){
+    left: 600px;
+    bottom: -100px;
+    animation: wallmove 3s infinite linear;
+    animation-delay: 2s;
+}
+.top-wall:nth-child(6){
+    left: 600px;
+    top:-200px;
+    animation: wallmove 3s infinite linear;
+    animation-delay: 2s;
 }
 
 @keyframes wallmove{
@@ -68,6 +84,7 @@ body{
         
     }
     100%{
-        transform: translate(-300px,-200px);
+        
+        left: -300px;
     }
 }
