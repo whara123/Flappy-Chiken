@@ -23,8 +23,8 @@ body{
 }
 
 .chiken{
-    width: 75px;
-    height: 75px;
+    width: 60px;
+    height: 60px;
     position: absolute;
     background-image: url(../img/chiken.png);
     background-repeat: no-repeat;
@@ -42,7 +42,7 @@ body{
     background-repeat: no-repeat;
     background-size: contain;
     left: 600px;
-    bottom: -100px;
+    top: 330px;
     animation: wallmove 3s infinite linear;
 }
 
@@ -54,7 +54,7 @@ body{
 
 .down-wall:nth-child(2){
     left: 600px;
-    bottom: -100px;
+    top: 330px;
     animation: wallmove 3s infinite linear;
     animation-delay: 1s;
 }
@@ -68,7 +68,7 @@ body{
 
 .down-wall:nth-child(3){
     left: 600px;
-    bottom: -100px;
+    top: 330px;
     animation: wallmove 3s infinite linear;
     animation-delay: 2s;
 }
