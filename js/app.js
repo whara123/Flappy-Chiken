@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   let gravity = 0.3;
   let jumpPower = 3;
-  
+  let randomPos=0;
+
   function gameStart(){
     chikenBottom += jumpPower;
     jumpPower -= gravity;
@@ -34,12 +35,17 @@ document.addEventListener('DOMContentLoaded',()=>{
       }
     });
 
-    
-    
   }
   let timer = setInterval(gameStart,15);
   
-
+  topWalls.forEach((topWall,idx)=>{
+    topWall.addEventListener("animationiteration",()=>{
+      randomPos = Math.floor(Math.random()*160-40)+40;
+     
+      topWall.style.top=`-${randomPos}px`;
+      downWalls[idx].style.top = `${(-randomPos)+530}px`;
+    })
+  })
 
 
 
