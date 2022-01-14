@@ -32,11 +32,11 @@ body{
 
 .chiken{
     width: 50px;
-    height: 40px;
+    height: 50px;
     position: absolute;
     background-image: url(../img/chiken.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     border: 1px solid black;
     bottom : 250px;
     left: 100px;
