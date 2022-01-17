@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   
     //벽 위치 초기화
     topWalls.forEach((topwall)=>{
+      topwall.classList.add("check");
       topwall.classList.remove("anim");
       topwall.style.animationPlayState = 'paused';
     })
@@ -111,7 +112,9 @@ document.addEventListener('DOMContentLoaded',()=>{
   function gameOver(){
     
     game=false;
-
+    if(bestScore<Score){
+      bestScore = Score;
+    }
     topWalls.forEach((topwall)=>{
       topwall.style.animationPlayState = 'paused';
     })
@@ -119,12 +122,15 @@ document.addEventListener('DOMContentLoaded',()=>{
       downwall.style.animationPlayState = 'paused';
     })
     document.querySelector(".dimd").classList.add("on");
-    
+    document.querySelector(".text-score").innerText=`SCORE : ${Score}`;
+    document.querySelector(".best-score").innerText=`BEST : ${bestScore}`;
   }
 
   start.addEventListener("click",()=>{
     start.classList.add("on");
+    chiken.classList.add("border-size");
     topWalls.forEach((topwall)=>{
+      
       topwall.classList.add("anim");
       topwall.style.animationPlayState = 'running';
     })
@@ -138,6 +144,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   restartBtn.addEventListener("click",()=>{
     gameInit();
     start.classList.remove("on");
+    chiken.classList.remove("border-size");
     document.querySelector(".dimd").classList.remove("on");
   })
 
