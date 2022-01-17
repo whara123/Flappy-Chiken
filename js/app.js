@@ -4,65 +4,95 @@ document.addEventListener('DOMContentLoaded',()=>{
   const topWalls = document.querySelectorAll(".top-wall");
   const downWalls = document.querySelectorAll(".down-wall");
   const scoreBoard = document.querySelector(".score");
-
+  const start = document.querySelector(".start");
+  const restartBtn = document.querySelector(".btn-restart");
   let chikenLeft = 100;
   let chikenBottom = 250;
-
   let gravity = 0.3;
   let jumpPower = 3;
-  
   let Score=0;
-  let game = true;
-  scoreBoard.innerText = `Score : ${Score}`
-
-  
+  let game = false;
   let bestScore=0;
 
-  function gameStart(){
-    chikenBottom += jumpPower;
-    jumpPower -= gravity;
+  
+  function gameInit(){
+    chikenLeft = 100;
+    chikenBottom = 250;
+    gravity = 0.3;
+    jumpPower = 3;
+    Score=0;
+    game = false;
+    
+
+    //점수 초기화
+    scoreBoard.innerText = `Score : ${Score}`
+
+    //치켄 위치 초기화
     chiken.style.left = `${chikenLeft}px`;
     chiken.style.bottom = `${chikenBottom}px`;
-    
+  
+    //벽 위치 초기화
     topWalls.forEach((topwall)=>{
-      if(chiken.offsetLeft<=(topwall.offsetLeft+topwall.offsetWidth) &&
-      (chiken.offsetLeft+chiken.offsetWidth)>=topwall.offsetLeft &&
-      chiken.offsetTop<=(topwall.offsetTop+topwall.offsetHeight) &&
-      (chiken.offsetTop+chiken.offsetHeight)>=topwall.offsetTop){
-        gameOver();
-      }
-    });
-
+      topwall.classList.remove("anim");
+      topwall.style.animationPlayState = 'paused';
+    })
     downWalls.forEach((downwall)=>{
-      if(chiken.offsetLeft<=(downwall.offsetLeft+downwall.offsetWidth) &&
-      (chiken.offsetLeft+chiken.offsetWidth)>=downwall.offsetLeft &&
-      chiken.offsetTop<=(downwall.offsetTop+downwall.offsetHeight) &&
-      (chiken.offsetTop+chiken.offsetHeight)>=downwall.offsetTop){
-        gameOver();
-      }
-    });
+      downwall.classList.remove("anim");
+      downwall.style.animationPlayState = 'paused';
+    })
+  }
+  gameInit();
 
-    topWalls.forEach((topWall)=>{
-      if((chiken.offsetLeft+chiken.offsetWidth)>(topWall.offsetLeft+topWall.offsetWidth)){
-        if(topWall.classList.value === "top-wall check"){
-          Score++;
-          scoreBoard.innerText = `Score : ${Score}`
-          topWall.classList.remove("check");
+
+  function gameStart(){
+    if(game){
+      chikenBottom += jumpPower;
+      jumpPower -= gravity;
+      chiken.style.left = `${chikenLeft}px`;
+      chiken.style.bottom = `${chikenBottom}px`;
+      
+      topWalls.forEach((topwall)=>{
+        if(chiken.offsetLeft<=(topwall.offsetLeft+topwall.offsetWidth) &&
+        (chiken.offsetLeft+chiken.offsetWidth)>=topwall.offsetLeft &&
+        chiken.offsetTop<=(topwall.offsetTop+topwall.offsetHeight) &&
+        (chiken.offsetTop+chiken.offsetHeight)>=topwall.offsetTop){
+          gameOver();
         }
-      }
-    });
+      });
+  
+      downWalls.forEach((downwall)=>{
+        if(chiken.offsetLeft<=(downwall.offsetLeft+downwall.offsetWidth) &&
+        (chiken.offsetLeft+chiken.offsetWidth)>=downwall.offsetLeft &&
+        chiken.offsetTop<=(downwall.offsetTop+downwall.offsetHeight) &&
+        (chiken.offsetTop+chiken.offsetHeight)>=downwall.offsetTop){
+          gameOver();
+        }
+      });
+  
+      topWalls.forEach((topWall)=>{
+        if((chiken.offsetLeft+chiken.offsetWidth)>(topWall.offsetLeft+topWall.offsetWidth)){
+          if(topWall.classList.contains("check")){
+            Score++;
+            scoreBoard.innerText = `Score : ${Score}`
+            topWall.classList.remove("check");
+          }
+        }
+      });
+
+    }
 
 
   }
   let timer = setInterval(gameStart,15);
   
+
   topWalls.forEach((topWall,idx)=>{
     topWall.addEventListener("animationiteration",()=>{
       randomPos = Math.floor(Math.random()*160-40)+40;
       
       topWall.style.top=`-${randomPos}px`;
       downWalls[idx].style.top = `${(-randomPos)+530}px`;
-      if(topWall.classList.value === "top-wall"){
+      if(topWall.classList.value === "top-wall anim"){
         topWall.classList.add("check");
       }
     })
@@ -91,5 +121,25 @@ document.addEventListener('DOMContentLoaded',()=>{
     document.querySelector(".dimd").classList.add("on");
     
   }
+
+  start.addEventListener("click",()=>{
+    start.classList.add("on");
+    topWalls.forEach((topwall)=>{
+      topwall.classList.add("anim");
+      topwall.style.animationPlayState = 'running';
+    })
+    downWalls.forEach((downwall)=>{
+      downwall.classList.add("anim");
+      downwall.style.animationPlayState = 'running';
+    })
+    game=true;
+  })
+
+  restartBtn.addEventListener("click",()=>{
+    gameInit();
+    start.classList.remove("on");
+    document.querySelector(".dimd").classList.remove("on");
+  })
+
 
 })
