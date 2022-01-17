@@ -82,7 +82,9 @@ document.addEventListener('DOMContentLoaded',()=>{
 
     }
 
-
+    if((chiken.offsetTop+chiken.offsetHeight)>600 || chiken.offsetTop<0){
+      gameOver();
+    }
   }
   let timer = setInterval(gameStart,15);
   
