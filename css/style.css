@@ -41,9 +41,7 @@ body{
     left: 100px;
     box-sizing: border-box;
 }
-.chiken.border-size{
-    animation: hitbox 4s linear;
-}
+
 
 .down-wall,.top-wall{
     display: inline-block;
@@ -99,7 +97,6 @@ body{
         
     }
     100%{
-        
         left: -300px;
     }
 }
@@ -138,7 +135,7 @@ body{
 .text-game-over{
     text-align: center;
     font-size: 20px;
-    margin : 100px 0 20px 0;
+    margin : 150px 0 20px 0;
 }
 
 .score-board{
@@ -164,6 +161,16 @@ body{
     animation: best 1s infinite linear;
 }
 
+.btn-restart{
+    width: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: blanchedalmond;
+    cursor: pointer;
+}
+
+
 @keyframes best {
     0%{
         color:#3A88F0;
@@ -181,28 +188,3 @@ body{
         color:#3A88F0;
     }
 }
-
-@keyframes hitbox {
-    0%{
-        border: 1px solid #000;
-    }
-    92%{
-        border: 1px solid #000;
-    }
-    94%{
-        border: none;
-    }
-    96%{
-        border: 1px solid #000;
-    }
-    98%{
-        border: none;
-    }
-    99%{
-        border: 1px solid #000;
-    }
-    100%{
-        border: none;
-    }
-}
-

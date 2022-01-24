@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded',()=>{
 
   const chiken = document.querySelector(".chiken");
+
   const topWalls = document.querySelectorAll(".top-wall");
   const downWalls = document.querySelectorAll(".down-wall");
   const scoreBoard = document.querySelector(".score");
@@ -53,18 +54,18 @@ document.addEventListener('DOMContentLoaded',()=>{
       chiken.style.bottom = `${chikenBottom}px`;
       
       topWalls.forEach((topwall)=>{
-        if(chiken.offsetLeft<=(topwall.offsetLeft+topwall.offsetWidth) &&
+        if(chiken.offsetLeft+25<=(topwall.offsetLeft+topwall.offsetWidth) &&
         (chiken.offsetLeft+chiken.offsetWidth)>=topwall.offsetLeft &&
-        chiken.offsetTop<=(topwall.offsetTop+topwall.offsetHeight) &&
+        chiken.offsetTop+10<=(topwall.offsetTop+topwall.offsetHeight) &&
         (chiken.offsetTop+chiken.offsetHeight)>=topwall.offsetTop){
           gameOver();
         }
       });
   
       downWalls.forEach((downwall)=>{
-        if(chiken.offsetLeft<=(downwall.offsetLeft+downwall.offsetWidth) &&
+        if(chiken.offsetLeft+25<=(downwall.offsetLeft+downwall.offsetWidth) &&
         (chiken.offsetLeft+chiken.offsetWidth)>=downwall.offsetLeft &&
-        chiken.offsetTop<=(downwall.offsetTop+downwall.offsetHeight) &&
+        chiken.offsetTop+10<=(downwall.offsetTop+downwall.offsetHeight) &&
         (chiken.offsetTop+chiken.offsetHeight)>=downwall.offsetTop){
           gameOver();
         }
