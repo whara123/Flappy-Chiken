@@ -41,9 +41,7 @@ body{
     left: 100px;
     box-sizing: border-box;
 }
-.chiken.border-size{
-    animation: hitbox 4s linear;
-}
+
 
 .down-wall,.top-wall{
     display: inline-block;
@@ -190,28 +188,3 @@ body{
         color:#3A88F0;
     }
 }
-
-@keyframes hitbox {
-    0%{
-        border: 1px solid #000;
-    }
-    92%{
-        border: 1px solid #000;
-    }
-    94%{
-        border: none;
-    }
-    96%{
-        border: 1px solid #000;
-    }
-    98%{
-        border: none;
-    }
-    99%{
-        border: 1px solid #000;
-    }
-    100%{
-        border: none;
-    }
-}
-
