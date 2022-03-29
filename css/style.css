@@ -130,40 +130,6 @@ body {
   display: none;
 }
 
-<<<<<<< HEAD
-.background{
-    width: 600px;
-    height: 600px;
-    margin: 0 auto;
-    top:10vh;
-    position: relative;
-    background-image: url(../img/background.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    overflow: hidden;
-}
-
-.score{
-    position: relative;
-    top: 10px;
-    left: 10px;
-    z-index: 100;
-    user-select: none;
-}
-
-.chiken{
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    background-image: url(../img/chiken.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    bottom : 250px;
-    left: 100px;
-    box-sizing: border-box;
-}
-
-=======
 .text-game-over {
   text-align: center;
   font-size: 20px;
@@ -181,7 +147,6 @@ body {
   border: 1px solid #000;
   border-radius: 10px;
 }
->>>>>>> 5453b179dedf40d47040f81fb41ef488e119ad62
 
 .text-score {
   margin-bottom: 30px;
@@ -202,61 +167,6 @@ body {
   cursor: pointer;
 }
 
-<<<<<<< HEAD
-.down-wall:nth-child(2){
-    left: 600px;
-    top: 330px;
-    /* animation: wallmove 3s infinite linear; */
-    animation-delay: 1s;
-}
-
-.top-wall:nth-child(5){
-    left: 600px;
-    top:-200px;
-    /* animation: wallmove 3s infinite linear; */
-    animation-delay: 1s;
-}
-
-.down-wall:nth-child(3){
-    left: 600px;
-    top: 330px;
-    /* animation: wallmove 3s infinite linear; */
-    animation-delay: 2s;
-}
-.top-wall:nth-child(6){
-    left: 600px;
-    top:-200px;
-    /* animation: wallmove 3s infinite linear; */
-    animation-delay: 2s;
-}
-
-@keyframes wallmove{
-    0%{
-        
-    }
-    100%{
-        left: -300px;
-    }
-}
-
-.dimd{
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 50;
-    background: rgba(0,0,0,0.2);
-
-}
-.dimd.on{
-    display: block;
-}
-
-.start{
-    position: absolute;
-=======
 @keyframes best {
   0% {
     color: #3a88f0;
@@ -279,74 +189,7 @@ body {
   .background {
     width: 100vw;
     height: 600px;
->>>>>>> 5453b179dedf40d47040f81fb41ef488e119ad62
     top: 0;
     background-size: cover;
-<<<<<<< HEAD
-    background-repeat: no-repeat;
-}
-
-.start.on{
-    display:none;
-}
-
-.text-game-over{
-    text-align: center;
-    font-size: 20px;
-    margin : 150px 0 20px 0;
-}
-
-.score-board{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    padding: 30px;
-    background-color: #F5C9A1;
-    border: 1px solid #000;
-    border-radius: 10px;
-}
-
-.text-score{
-    margin-bottom: 30px;
-    font-size: 30px;
-}
-.best-score{
-    
-    font-size: 30px;
-    color: rosybrown;
-    animation: best 1s infinite linear;
-}
-
-.btn-restart{
-    width: 100px;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 15px;
-    background-color: blanchedalmond;
-    cursor: pointer;
-}
-
-
-@keyframes best {
-    0%{
-        color:#3A88F0;
-    }
-    25%{
-        color:#949AF5;
-    }
-    50%{
-        color:#D0F561;
-    }
-    75%{
-        color:#F58ED7;
-    }
-    100%{
-        color:#3A88F0;
-    }
-}
-=======
   }
 }
->>>>>>> 5453b179dedf40d47040f81fb41ef488e119ad62
