@@ -1,5 +1,6 @@
 document.onmousedown = disableClick;
 document.onkeydown = disableKey;
+
 function disableClick(event) {
   if (event.button == 2) {
     alert("우클릭이 금지되어 있습니다.");
@@ -14,9 +15,8 @@ function disableKey(event) {
   }
 }
 
-Kakao.init("8f5378ea6c807a98e7ddaa9ed0960f87");
-
 document.addEventListener("DOMContentLoaded", () => {
+  Kakao.init("8f5378ea6c807a98e7ddaa9ed0960f87");
   const chiken = document.querySelector(".chiken");
 
   const topWalls = document.querySelectorAll(".top-wall");
@@ -53,14 +53,16 @@ document.addEventListener("DOMContentLoaded", () => {
               mobileWebUrl: sendUrl,
               webUrl: sendUrl,
             },
-            buttons: {
+          },
+          buttons: [
+            {
               title: "게임하러 가기",
               link: {
                 mobileWebUrl: sendUrl,
                 webUrl: sendUrl,
               },
             },
-          },
+          ],
         });
       }
     });
@@ -82,14 +84,11 @@ document.addEventListener("DOMContentLoaded", () => {
     Score = 0;
     game = false;
 
-    //점수 초기화
     scoreBoard.innerText = `Score : ${Score}`;
 
-    //치켄 위치 초기화
     chiken.style.left = `${chikenLeft}px`;
     chiken.style.bottom = `${chikenBottom}px`;
 
-    //벽 위치 초기화
     topWalls.forEach((topwall) => {
       topwall.classList.add("check");
       topwall.classList.remove("anim");
