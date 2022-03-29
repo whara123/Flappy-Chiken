@@ -14,6 +14,8 @@ function disableKey(event) {
   }
 }
 
+Kakao.init("8f5378ea6c807a98e7ddaa9ed0960f87");
+
 document.addEventListener("DOMContentLoaded", () => {
   const chiken = document.querySelector(".chiken");
 
@@ -22,6 +24,41 @@ document.addEventListener("DOMContentLoaded", () => {
   const scoreBoard = document.querySelector(".score");
   const start = document.querySelector(".start");
   const restartBtn = document.querySelector(".btn-restart");
+
+  const sharedBtn = document.querySelectorAll(".btn-share");
+  const sendUrl = "https://whara123.github.io/Flappy-Chiken/";
+
+  sharedBtn.forEach((snsBtn) => {
+    snsBtn.addEventListener("click", () => {
+      if (snsBtn.classList == "btn-share facebook") {
+        window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
+      }
+      if (snsBtn.classList == "btn-share twitter") {
+        window.open(
+          "https://twitter.com/intent/tweet?text=" +
+            "도전! 몇 점까지 가능?" +
+            "&url=" +
+            sendUrl
+        );
+      }
+      if (snsBtn.classList == "btn-share kakao") {
+        Kakao.Link.createDefaultButton({
+          container: "#btnKakao",
+          objectType: "feed",
+          content: {
+            title: "플러피치켄",
+            description: "몇 점까지 가능하세요?",
+            imageUrl: sendUrl,
+            link: {
+              mobileWebUrl: sendUrl,
+              webUrl: sendUrl,
+            },
+          },
+        });
+      }
+    });
+  });
+
   let chikenLeft = 100;
   let chikenBottom = 250;
   let gravity = 0.3;
