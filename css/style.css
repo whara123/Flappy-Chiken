@@ -124,6 +124,7 @@ body {
   z-index: 50;
   font-size: 8em;
   text-align: center;
+  user-select: none;
 }
 
 .start.on {
@@ -134,6 +135,7 @@ body {
   text-align: center;
   font-size: 20px;
   margin: 150px 0 20px 0;
+  user-select: none;
 }
 
 .score-board {
@@ -151,11 +153,13 @@ body {
 .text-score {
   margin-bottom: 30px;
   font-size: 30px;
+  user-select: none;
 }
 .best-score {
   font-size: 30px;
   color: rosybrown;
   animation: best 1s infinite linear;
+  user-select: none;
 }
 
 .btn-restart {
@@ -165,6 +169,7 @@ body {
   font-size: 15px;
   background-color: blanchedalmond;
   cursor: pointer;
+  user-select: none;
 }
 
 @keyframes best {
@@ -183,6 +188,29 @@ body {
   100% {
     color: #3a88f0;
   }
+}
+
+.wrap-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.sns-shared {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-share {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.btn-share.band {
+  border-radius: 100px;
 }
 
 @media screen and (max-width: 420px) {
