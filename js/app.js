@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
           objectType: "feed",
           content: {
             title: "플러피치켄",
-            description: "몇 점까지 가능하세요?",
+            description: `난 ${bestScore}점인데 너는 몇 점까지 가능해?`,
             imageUrl: sendUrl,
             link: {
               mobileWebUrl: sendUrl,
