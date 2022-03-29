@@ -54,6 +54,13 @@ document.addEventListener("DOMContentLoaded", () => {
               mobileWebUrl: sendUrl,
               webUrl: sendUrl,
             },
+            buttons: {
+              title: "게임하러 가기",
+              link: {
+                mobileWebUrl: sendUrl,
+                webUrl: sendUrl,
+              },
+            },
           },
         });
       }
