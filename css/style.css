@@ -1,15 +1,136 @@
 .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
 }
-body{
-    background-color: #eee;
+body {
+  background-color: #eee;
+  overflow: hidden;
 }
 
+.background {
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  top: 10vh;
+  position: relative;
+  background-image: url(../img/background.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  overflow: hidden;
+}
+
+.score {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+  user-select: none;
+}
+
+.chiken {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-image: url(../img/chiken.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 250px;
+  left: 100px;
+  box-sizing: border-box;
+}
+
+.down-wall,
+.top-wall {
+  display: inline-block;
+  width: 100px;
+  height: 355px;
+  position: absolute;
+  background-image: url(../img/downside.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: 600px;
+  top: 330px;
+}
+.top-wall.anim,
+.down-wall.anim {
+  animation: wallmove 3s infinite linear;
+}
+
+.top-wall {
+  background-image: url(../img/upside.png);
+  left: 600px;
+  top: -200px;
+}
+
+.down-wall:nth-child(2) {
+  left: 600px;
+  top: 330px;
+  /* animation: wallmove 3s infinite linear; */
+  animation-delay: 1s;
+}
+
+.top-wall:nth-child(5) {
+  left: 600px;
+  top: -200px;
+  /* animation: wallmove 3s infinite linear; */
+  animation-delay: 1s;
+}
+
+.down-wall:nth-child(3) {
+  left: 600px;
+  top: 330px;
+  /* animation: wallmove 3s infinite linear; */
+  animation-delay: 2s;
+}
+.top-wall:nth-child(6) {
+  left: 600px;
+  top: -200px;
+  /* animation: wallmove 3s infinite linear; */
+  animation-delay: 2s;
+}
+
+@keyframes wallmove {
+  0% {
+  }
+  100% {
+    left: -300px;
+  }
+}
+
+.dimd {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.2);
+}
+.dimd.on {
+  display: block;
+}
+
+.start {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  font-size: 8em;
+  text-align: center;
+}
+
+.start.on {
+  display: none;
+}
+
+<<<<<<< HEAD
 .background{
     width: 600px;
     height: 600px;
@@ -42,29 +163,46 @@ body{
     box-sizing: border-box;
 }
 
-
-.down-wall,.top-wall{
-    display: inline-block;
-    width: 100px;
-    height: 355px;
-    position: absolute;
-    background-image: url(../img/downside.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    left: 600px;
-    top: 330px;
-    
-}
-.top-wall.anim, .down-wall.anim{
-    animation: wallmove 3s infinite linear;
+=======
+.text-game-over {
+  text-align: center;
+  font-size: 20px;
+  margin: 150px 0 20px 0;
 }
 
-.top-wall{
-    background-image: url(../img/upside.png);
-    left: 600px;
-    top:-200px;
+.score-board {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #f5c9a1;
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+>>>>>>> 5453b179dedf40d47040f81fb41ef488e119ad62
+
+.text-score {
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+.best-score {
+  font-size: 30px;
+  color: rosybrown;
+  animation: best 1s infinite linear;
 }
 
+.btn-restart {
+  width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: blanchedalmond;
+  cursor: pointer;
+}
+
+<<<<<<< HEAD
 .down-wall:nth-child(2){
     left: 600px;
     top: 330px;
@@ -118,13 +256,33 @@ body{
 
 .start{
     position: absolute;
+=======
+@keyframes best {
+  0% {
+    color: #3a88f0;
+  }
+  25% {
+    color: #949af5;
+  }
+  50% {
+    color: #d0f561;
+  }
+  75% {
+    color: #f58ed7;
+  }
+  100% {
+    color: #3a88f0;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .background {
+    width: 100vw;
+    height: 600px;
+>>>>>>> 5453b179dedf40d47040f81fb41ef488e119ad62
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 50;
-    background-image: url(../img/start.png);
     background-size: cover;
+<<<<<<< HEAD
     background-repeat: no-repeat;
 }
 
@@ -188,3 +346,7 @@ body{
         color:#3A88F0;
     }
 }
+=======
+  }
+}
+>>>>>>> 5453b179dedf40d47040f81fb41ef488e119ad62
