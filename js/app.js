@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
               mobileWebUrl: sendUrl,
               webUrl: sendUrl,
             },
-            buttons: {
+            button: {
               title: "게임하러 가기",
               link: {
                 mobileWebUrl: sendUrl,
