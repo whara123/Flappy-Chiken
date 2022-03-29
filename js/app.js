@@ -1,5 +1,6 @@
 document.onmousedown = disableClick;
 document.onkeydown = disableKey;
+
 function disableClick(event) {
   if (event.button == 2) {
     alert("우클릭이 금지되어 있습니다.");
@@ -38,14 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
     Score = 0;
     game = false;
 
-    //점수 초기화
     scoreBoard.innerText = `Score : ${Score}`;
 
-    //치켄 위치 초기화
     chiken.style.left = `${chikenLeft}px`;
     chiken.style.bottom = `${chikenBottom}px`;
 
-    //벽 위치 초기화
     topWalls.forEach((topwall) => {
       topwall.classList.add("check");
       topwall.classList.remove("anim");
