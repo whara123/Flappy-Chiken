@@ -1,19 +1,19 @@
-document.onmousedown = disableClick;
-document.onkeydown = disableKey;
+// document.onmousedown = disableClick;
+// document.onkeydown = disableKey;
 
-function disableClick(event) {
-  if (event.button == 2) {
-    alert("우클릭이 금지되어 있습니다.");
-    return false;
-  }
-}
+// function disableClick(event) {
+//   if (event.button == 2) {
+//     alert("우클릭이 금지되어 있습니다.");
+//     return false;
+//   }
+// }
 
-function disableKey(event) {
-  if (event.keyCode == 123 || event.keyCode == 74) {
-    event.preventDefault();
-    event.returnValue = false;
-  }
-}
+// function disableKey(event) {
+//   if (event.keyCode == 123 || event.keyCode == 74) {
+//     event.preventDefault();
+//     event.returnValue = false;
+//   }
+// }
 
 Kakao.init("8f5378ea6c807a98e7ddaa9ed0960f87");
 
@@ -54,14 +54,16 @@ document.addEventListener("DOMContentLoaded", () => {
               mobileWebUrl: sendUrl,
               webUrl: sendUrl,
             },
-            button: {
+          },
+          buttons: [
+            {
               title: "게임하러 가기",
               link: {
                 mobileWebUrl: sendUrl,
                 webUrl: sendUrl,
               },
             },
-          },
+          ],
         });
       }
     });
