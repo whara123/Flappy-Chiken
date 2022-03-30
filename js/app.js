@@ -1,22 +1,18 @@
-document.onmousedown = disableClick;
-document.onkeydown = disableKey;
-
-function disableClick(event) {
-  if (event.button == 2) {
-    alert("우클릭이 금지되어 있습니다.");
-    return false;
-  }
-}
-
-function disableKey(event) {
-  if (event.keyCode == 123 || event.keyCode == 74) {
-    event.preventDefault();
-    event.returnValue = false;
-  }
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   Kakao.init("8f5378ea6c807a98e7ddaa9ed0960f87");
+
+  document.onkeydown = disableKey;
+  document.oncontextmenu = () => {
+    return false;
+  };
+
+  function disableKey(event) {
+    if (event.keyCode == 123 || event.keyCode == 74) {
+      event.preventDefault();
+      event.returnValue = false;
+    }
+  }
+
   const chiken = document.querySelector(".chiken");
 
   const topWalls = document.querySelectorAll(".top-wall");
