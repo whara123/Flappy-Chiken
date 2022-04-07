@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const restartBtn = document.querySelector(".btn-restart");
 
   const sharedBtn = document.querySelectorAll(".btn-share");
-  const sendUrl = "https://whara123.github.io/Flappy-Chiken/";
+  const sendUrl = "https://flappychiken.netlify.app/";
 
   sharedBtn.forEach((snsBtn) => {
     snsBtn.addEventListener("click", () => {
