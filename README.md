@@ -9,6 +9,7 @@
 <br/>
 
 sns 공유로 자신의 점수를 공유할 수 있습니다.
+<br/>
 <img src="./img/sns.png" style="width:50%">
 
 <br/>
