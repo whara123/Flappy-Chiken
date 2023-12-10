@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Keywords" content="flappy bird, javaScript, Web game" />
+    <title>Flappy Chiken</title>
+    <link rel="shortcut icon" href="./img/icon.png" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/font.css" />
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script src="js/app.js"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7477578974399725"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="background">
+      <div class="chiken"></div>
+
+      <div class="down-wall anim"></div>
+      <div class="down-wall anim"></div>
+      <div class="down-wall anim"></div>
+
+      <div class="top-wall check anim"></div>
+      <div class="top-wall check anim"></div>
+      <div class="top-wall check anim"></div>
+      <span class="score">Score : </span>
+      <div class="start">Touch!</div>
+      <div class="dimd">
+        <div class="text-game-over">
+          <p>게임종료!</p>
+        </div>
+        <div class="score-board">
+          <p class="best-score"></p>
+          <p class="text-score">점수 :</p>
+
+          <div class="wrap-btn">
+            <button type="button" class="btn-restart">재시작</button>
+            <div class="sns-shared">
+              <img
+                src="./img/facebook_icon.png"
+                alt="페이스북 아이콘 이미지"
+                class="btn-share facebook"
+              />
+              <img
+                src="./img/twi_icon.png"
+                alt="트위터 아이콘 이미지"
+                class="btn-share twitter"
+              />
+              <img
+                src="./img/kakao_icon.png"
+                alt="카카오톡 아이콘 이미지"
+                id="btnKakao"
+                class="btn-share kakao"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
